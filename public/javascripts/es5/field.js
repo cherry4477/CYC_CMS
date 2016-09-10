@@ -37,23 +37,51 @@ var fieldVM=new Vue({
     },
     methods:{
         saveField:function(){
-            var field=this.field;
+            // var field={
+            //     name:this.field .name;
+            // }
         //   存到接口中 start
-
+        //    [PUT] /content_types/:content_type_id
+            $.ajax({
+                url:'/hzf/content_types/'+apiName,
+                type:'put',
+                sync:false,
+                cache:false,
+                data:JSON.stringify(this.field),
+                success:function(json){
+                    if(json.code==0){
+                        alert('添加成功！')
+                    }
+                },
+                error:function(){
+                    alert('添加失败');
+                }
+            })
         //    end
             this.field={};
+            this.queryFields();
 
         },
         queryFields:function(){
-           var fieldArr=this.fieldArr;
-            // query
-
+            // query  content_types/:content_type_id
+            $.ajax({
+                url:'/hzf/content_types/'+apiName,
+                type:'get',
+                sync:false,
+                cache:false,
+                success:function(json){
+                   console.log(json);
+                    fieldVM.fieldArr=json.data.fields;
+                },
+                error:function(){
+                    alert('查询失败');
+                }
+            })
             // 查询接口中数据 start
-
             //end
         }
     },
     ready:function(){
-
+        this.queryFields();
     }
 })

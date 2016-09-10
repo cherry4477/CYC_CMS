@@ -1,0 +1,43 @@
+<% layout('tpl/layout.html') -%>
+<script>
+    var contentTypeId='<%=contentTypeId %>';
+    var contentId='<%=contentId %>';
+    var contentName='<%=contentName %>';
+</script>
+<% block('css').append('<link rel="stylesheet" href="/stylesheets/contentEdit.css">')%>
+<% block('js').append('<script type="text/javascript" src="/javascripts/es5/contentEdit.js"></script>')%>
+<div class="contentEdit-header">
+    <header class="header-box"  style="width:1500px;" >
+        <div class="model-box" style="padding-left: 80px;width: 1445px;margin: auto;">
+            <H1 class="model-title">
+                <%=contentName %>
+            </H1>
+            <div style="display: inline-block; padding-top: 12px; float: right; padding-left: 300px;">
+                <button type="button" class="btn btn-primary" style=" margin-right: 100px;padding: 6px 30px;" @click="saveContentInfo">SAVE</button>
+                <!--<button type="button" class="btn btn-success" @click="saveModel">Save content model</button>-->
+            </div>
+        </div>
+    </header>
+
+    <div class="contentEdit-body" style="width: 1349px; padding-bottom: 50px; padding-left: 80px; margin-top: 0px;">
+        <div style="margin: auto ;width: 600px;">
+        <div class="form-group" style="margin-top: 0px; padding-top: 90px;">
+            <p>CONTENT TYPE ID:</p>
+            <input class="form-control form-input" placeholder="content_type_id" type="text" id="contentTypId" v-model="contentInfo.content_type_id">
+        </div>
+        <div class="form-group">
+            <p>CONTENT NAME:</p>
+            <input class="form-control form-input" placeholder="content name" type="text" id="conName" v-model="contentInfo.conName">
+        </div>
+        <div class="form-group">
+            <p>DESCRIPTION:</p>
+            <textarea class="form-control form-input" placeholder="description" id="description" v-model="contentInfo.description"></textarea>
+        </div>
+        <div class="form-group" id="content-fields"  v-for="arr in contentFields">
+            <p id="{{arr.type}}">{{arr.name}}:</p>
+            <input name="form-input" class="form-control form-input" id="{{arr.id}}" placeholder="{{arr.name}}'s value" type="text">
+        </div>
+        </div>
+        <!--<button class="btn-default"> SAVE </button>-->
+    </div>
+</div>

@@ -1,6 +1,6 @@
 <% layout('tpl/layout.html') -%>
-<% block('css').append('<link rel="stylesheet" href="stylesheets/content-model.css">')%>
-<% block('js').append('<script type="text/javascript" src="javascripts/es5/content-model.js"></script>')%>
+<% block('css').append('<link rel="stylesheet" href="/stylesheets/content-model.css">')%>
+<% block('js').append('<script type="text/javascript" src="/javascripts/es5/content-model.js"></script>')%>
 
 <div style="float: left" id="content-model">
     <header class="header-box"  style="width:1800px;" >
@@ -25,16 +25,16 @@
                 <th>NAME </th>
                 <th>DESCRIPTION</th>
                 <th>FIELDS</th>
-                <th>BY</th>
+                <!--<th>BY</th>-->
                 <th>UPDATE</th>
             </tr>
             <tr v-for="arr in modelArr" >
                 <td><a href="/field/{{arr.name}}">{{arr.id}}</a></td>
                 <td><a href="/field/{{arr.name}}">{{arr.name}}</a></td>
                 <td><a href="/field/{{arr.name}}">{{arr.description}}</a></td>
-                <td><a href="/field/{{arr.name}}">{{arr.fields}}</a></td>
-                <td><a href="/field/{{arr.name}}">{{arr.by}}</a></td>
-                <td><a href="/field/{{arr.name}}">{{arr.update}}</a></td>
+                <td><a href="/field/{{arr.name}}">{{arr.fieldscount}}</a></td>
+                <!--<td><a href="/field/{{arr.name}}">{{arr.by}}</a></td>-->
+                <td><a href="/field/{{arr.name}}">{{arr.updatetime}}</a></td>
             </tr>
             <!--<tr v-for="arr in modelArr">-->
                 <!--<td><input type="text" v-text="arr.id">{{arr.id}}</td>-->

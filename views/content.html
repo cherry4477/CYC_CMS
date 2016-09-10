@@ -1,1 +1,45 @@
 <% layout('tpl/layout.html') -%>
+<% block('css').append('<link rel="stylesheet" href="/stylesheets/content.css">')%>
+<% block('js').append('<script type="text/javascript" src="/javascripts/es5/content.js"></script>')%>
+
+<div style="float: left" id="content">
+    <header class="header-box"  style="width:1800px;" >
+        <div class="model-box" style="padding-left: 80px;width: 1445px;margin: auto;">
+            <H1 class="model-title">
+                Content
+            </H1>
+            <!--<div class="world-search" style="padding-top: 13px;  margin-left: 160px;">-->
+            <!--<input type="text" class="form-control world-search"  >-->
+            <!--<span class="" ></span>-->
+            <!--</div>-->
+            <!--<div style="display: inline-block; padding-top: 12px; float: right; padding-left: 300px;">-->
+                <!--<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">Add Entries</button>-->
+                <!--&lt;!&ndash;<button type="button" class="btn btn-success" @click="saveModel">Save content model</button>&ndash;&gt;-->
+            <!--</div>-->
+        </div>
+
+    </header>
+
+
+    <div class="table-box" style="padding-left: 80px; width: 1445px; margin-top: 90px;">
+        <table class="table" style="width: 1367px;">
+            <tr>
+                <th>CONTENT ID</th>
+                <th>CONTENT TYPE ID </th>
+                <th>NAME</th>
+                <th>DESCRIPTION</th>
+                <th>CREATE USER</th>
+                <th>UPDATE　TIME</th>
+            </tr>
+            <tr v-for="arr in contentArr" >
+                <td><a href="/contentEdit/{{arr.content_type_id}}/{{arr.content_id}}/{{arr.name}}">{{arr.content_id}}</a></td>
+                <td><a href="/contentEdit/{{arr.content_type_id}}/{{arr.content_id}}/{{arr.name}}">{{arr.content_type_id}}</a></td>
+                <td><a href="/contentEdit/{{arr.content_type_id}}/{{arr.content_id}}/{{arr.name}}">{{arr.name}}</a></td>
+                <td><a href="/contentEdit/{{arr.content_type_id}}/{{arr.content_id}}/{{arr.name}}">{{arr.description}}</a></td>
+                <td><a href="/contentEdit/{{arr.content_type_id}}/{{arr.content_id}}/{{arr.name}}">{{arr.createuser}}</a></td>
+                <td><a href="/contentEdit/{{arr.content_type_id}}/{{arr.content_id}}/{{arr.name}}">{{arr.updatetime}}</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>

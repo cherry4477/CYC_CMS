@@ -24,46 +24,44 @@
                     <button type="button" class="btn btn-info btn-default"  data-toggle="modal" data-target="#field-Modal" style="width: 200px;border-radius: 5px;">Add Field</button>
                 </div>
                 <div class="btn-group" style="width: 200px; float: right;">
-                    <button type="button" class="btn btn-default" style="width: 200px;" @click="this.fieldShow=true"> Fields </button>
+                    <button type="button" class="btn btn-default" style="width: 200px;" @click="this.fieldShow=true; "> Fields </button>
                 </div>
                 <div class="btn-group" style="width: 200px; float: right;">
-                    <button type="button" class="btn btn-default" style="width: 200px;" @click="this.fieldShow=false"> JSON Previews</button>
+                    <button type="button" class="btn btn-default" style="width: 200px;" @click="this.fieldShow=false "> JSON Previews</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="query-field" style="padding-left: 80px; width: 1445px;  margin-top: 45px;">
-
-            <table class="table  table-striped" v-if="fieldShow">
-
-                <tr>
-                    <th>NAME </th>
-                    <th>TYPE</th>
-                    <th>ID</th>
-
-                </tr>
-                <tr v-for="arr in fieldArr">
-                    <td><p>{{arr.name}}</p></td>
-                    <td><p>{{arr.type}}</p></td>
-                    <th>{{arr.id}}</th>
-                </tr>
+            <table class="table  table-striped"  v-if="fieldShow">
+                    <!--<h3>Fields:</h3>-->
+                    <tr>
+                        <th>NAME </th>
+                        <th>TYPE</th>
+                        <th>ID</th>
+                    </tr>
+                    <tr v-for="arr in fieldArr">
+                        <td><p>{{arr.name}}</p></td>
+                        <td><p>{{arr.type}}</p></td>
+                        <th>{{arr.id}}</th>
+                    </tr>
 
             </table>
             <table v-else>
-              <tbody>
-              <tr>
-                  <td>
-                      <div v-for="arr in fieldArr">
-                          {{{arr | objStr}}}
-                      </div>
-                  </td>
-              </tr>
-              </tbody>
+                  <!--<h3>JSON Previews:</h3>-->
+                      <tr>
+                          <td>
+                              <div >
+                                  <ul class="list-group" >
+                                      <li class="list-group-item" v-for="arr in fieldArr">
+                                          <p>{{{arr | objStr}}}</p>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </td>
+                      </tr>
+
             </table>
-
-
-
-
     </div>
 
 
