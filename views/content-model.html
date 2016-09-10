@@ -6,7 +6,7 @@
     <header class="header-box"  style="width:1800px;" >
         <div class="model-box" style="padding-left: 80px;width: 1445px;margin: auto;">
             <H1 class="model-title">
-                Content Model Type
+                文档模型
             </H1>
             <!--<div class="world-search" style="padding-top: 13px;  margin-left: 160px;">-->
                 <!--<input type="text" class="form-control world-search"  >-->
@@ -21,20 +21,20 @@
     <div class="table-box" style="padding-left: 80px; width: 1445px;">
         <table class="table  table-hover">
             <tr>
-                <th>ID </th>
-                <th>NAME </th>
-                <th>DESCRIPTION</th>
-                <th>FIELDS</th>
+                <th>文档模型ID</th>
+                <th>文档名称 </th>
+                <th>文档描述</th>
+                <!--<th>文档字段数量</th>-->
                 <!--<th>BY</th>-->
-                <th>UPDATE</th>
+                <th>更新时间</th>
             </tr>
             <tr v-for="arr in modelArr" >
-                <td><a href="/field/{{arr.name}}">{{arr.id}}</a></td>
-                <td><a href="/field/{{arr.name}}">{{arr.name}}</a></td>
-                <td><a href="/field/{{arr.name}}">{{arr.description}}</a></td>
-                <td><a href="/field/{{arr.name}}">{{arr.fieldscount}}</a></td>
+                <td><a href="/field/{{arr.id}}">{{arr.id}}</a></td>
+                <td><a href="/field/{{arr.id}}">{{arr.name}}</a></td>
+                <td><a href="/field/{{arr.id}}">{{arr.description}}</a></td>
+                <!--<td><a href="/field/{{arr.id}}">{{arr.fieldscount}}</a></td>-->
                 <!--<td><a href="/field/{{arr.name}}">{{arr.by}}</a></td>-->
-                <td><a href="/field/{{arr.name}}">{{arr.updatetime}}</a></td>
+                <td><a href="/field/{{arr.id}}">{{arr.updatetime}}</a></td>
             </tr>
             <!--<tr v-for="arr in modelArr">-->
                 <!--<td><input type="text" v-text="arr.id">{{arr.id}}</td>-->
@@ -53,7 +53,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <h4 class="modal-title" id="myModalLabel">文档模型</h4>
                 </div>
                 <div class="modal-body">
                     <div class="input-group">

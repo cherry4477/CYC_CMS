@@ -1,6 +1,6 @@
 <% layout('tpl/layout.html') -%>
 <script>
-    var apiName='<%=name %>';
+    var apiName='<%=apiName %>';
 </script>
 <% block('css').append('<link rel="stylesheet" href="/stylesheets/field.css">')%>
 <% block('js').append('<script type="text/javascript" src="/javascripts/es5/field.js"></script>')%>
@@ -9,10 +9,10 @@
     <header class="header-box"  style="width:1800px;" >
         <div class="model-box" style="padding-left: 80px;width: 1445px;margin: auto;">
             <H1 class="model-title">
-                Content Model Field
+                文档模板字段
             </H1>
             <div style="display: inline-block; padding-top: 12px; float: right; padding-left: 300px;">
-                <button type="button" class="btn btn-primary" style="padding: 6px 20px;">Save</button>
+                <button type="button" class="btn btn-primary" style="padding: 6px 20px;">保存</button>
                 <!--<button type="button" class="btn btn-success" @click="saveModel">Save content model</button>-->
             </div>
         </div>
@@ -21,7 +21,7 @@
           <div style="width: 1365px;">
             <div class="btn-group btn-group-justified add-field-btn" style="margin-top: 75px;">
                 <div class="btn-group ">
-                    <button type="button" class="btn btn-info btn-default"  data-toggle="modal" data-target="#field-Modal" style="width: 200px;border-radius: 5px;">Add Field</button>
+                    <button type="button" class="btn btn-info btn-default"  data-toggle="modal" data-target="#field-Modal" style="width: 200px;border-radius: 5px;">更新文档模型字段</button>
                 </div>
                 <div class="btn-group" style="width: 200px; float: right;">
                     <button type="button" class="btn btn-default" style="width: 200px;" @click="this.fieldShow=true; "> Fields </button>
@@ -36,9 +36,9 @@
             <table class="table  table-striped"  v-if="fieldShow">
                     <!--<h3>Fields:</h3>-->
                     <tr>
-                        <th>NAME </th>
-                        <th>TYPE</th>
-                        <th>ID</th>
+                        <th>字段名称 </th>
+                        <th>字段类型</th>
+                        <th>字段ID</th>
                     </tr>
                     <tr v-for="arr in fieldArr">
                         <td><p>{{arr.name}}</p></td>

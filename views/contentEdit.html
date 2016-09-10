@@ -22,15 +22,15 @@
     <div class="contentEdit-body" style="width: 1349px; padding-bottom: 50px; padding-left: 80px; margin-top: 0px;">
         <div style="margin: auto ;width: 600px;">
         <div class="form-group" style="margin-top: 0px; padding-top: 90px;">
-            <p>CONTENT TYPE ID:</p>
+            <p>文档类型 ID:</p>
             <input class="form-control form-input" placeholder="content_type_id" type="text" id="contentTypId" v-model="contentInfo.content_type_id">
         </div>
         <div class="form-group">
-            <p>CONTENT NAME:</p>
+            <p>文档名称:</p>
             <input class="form-control form-input" placeholder="content name" type="text" id="conName" v-model="contentInfo.conName">
         </div>
         <div class="form-group">
-            <p>DESCRIPTION:</p>
+            <p>文档描述:</p>
             <textarea class="form-control form-input" placeholder="description" id="description" v-model="contentInfo.description"></textarea>
         </div>
         <div class="form-group" id="content-fields"  v-for="arr in contentFields">

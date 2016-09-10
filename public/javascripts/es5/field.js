@@ -33,6 +33,7 @@ var fieldVM=new Vue({
                 id:'3'
             }
         ],
+        fields:[],
         fieldShow:true
     },
     methods:{
@@ -42,16 +43,19 @@ var fieldVM=new Vue({
             // }
         //   存到接口中 start
         //    [PUT] /content_types/:content_type_id
+        //     console.log(this.field);
+
+            this.fields.push(this.field);
             $.ajax({
                 url:'/hzf/content_types/'+apiName,
                 type:'put',
                 sync:false,
-                cache:false,
-                data:JSON.stringify(this.field),
+                datatype: 'json',
+                contentType: "application/json",
+                data:JSON.stringify({"fieldscount":this.fields.length,'fields':this.fields}),
                 success:function(json){
-                    if(json.code==0){
-                        alert('添加成功！')
-                    }
+                    alert('添加成功！')
+
                 },
                 error:function(){
                     alert('添加失败');

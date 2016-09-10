@@ -41,11 +41,13 @@ var contentModelVM=new Vue({
                 type:'post',
                 sync:false,
                 cache:false,
+                datatype: 'json',
+                contentType: "application/json",
                 data: JSON.stringify(modelItem2),
                 success:function(json){
-                    if(json.code==0){
+                    // if(json.code==0){
                         alert('添加成功！')
-                    }
+                    // }
                 },
                 error:function(){
                     alert('添加失败');

@@ -6,7 +6,7 @@
     <header class="header-box"  style="width:1800px;" >
         <div class="model-box" style="padding-left: 80px;width: 1445px;margin: auto;">
             <H1 class="model-title">
-                Content
+                文档
             </H1>
             <!--<div class="world-search" style="padding-top: 13px;  margin-left: 160px;">-->
             <!--<input type="text" class="form-control world-search"  >-->
@@ -24,12 +24,12 @@
     <div class="table-box" style="padding-left: 80px; width: 1445px; margin-top: 90px;">
         <table class="table" style="width: 1367px;">
             <tr>
-                <th>CONTENT ID</th>
-                <th>CONTENT TYPE ID </th>
-                <th>NAME</th>
-                <th>DESCRIPTION</th>
-                <th>CREATE USER</th>
-                <th>UPDATE　TIME</th>
+                <th>文档 ID</th>
+                <th>文档类型 ID </th>
+                <th>文档名称</th>
+                <th>文档描述</th>
+                <th>创建者</th>
+                <th>更新时间</th>
             </tr>
             <tr v-for="arr in contentArr" >
                 <td><a href="/contentEdit/{{arr.content_type_id}}/{{arr.content_id}}/{{arr.name}}">{{arr.content_id}}</a></td>

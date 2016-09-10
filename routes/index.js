@@ -23,9 +23,9 @@ router.get('/content-href', function(req, res, next) {
 router.get('/api-href', function(req, res, next) {
   res.render('api', { title: 'api' });
 });
-router.get('/field/:name', function(req, res, next) {
-  var name=req.params.name;
-  res.render('field', { title: 'field' ,name:name});
+router.get('/field/:apiName', function(req, res, next) {
+  var apiName=req.params.apiName;
+  res.render('field', { title: 'field' ,apiName:apiName});
 });
 router.get('/contentEdit/:contentTypeId/:contentId/:contentName', function(req, res, next) {
   var contentTypeId=req.params.contentTypeId;

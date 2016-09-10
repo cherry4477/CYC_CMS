@@ -56,6 +56,8 @@ var contentInfoVm=new Vue({
                 type:'POST',
                 sync:false,
                 cache:false,
+                datatype: 'json',
+                contentType: "application/json",
                 data:JSON.stringify(data),
                 success:function(json){
                     if(json.code==0){
