@@ -9,10 +9,23 @@ router.all('/secret', function (req, res, next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'chengkj Express' });
+  res.render('index', { title: 'index' });
 });
 router.get('/index', function(req, res, next) {
-  res.render('index', { title: 'chengkj web app' });
+  res.render('index', { title: 'index' });
+});
+router.get('/model-href', function(req, res, next) {
+  res.render('content-model', { title: 'content-model' });
+});
+router.get('/content-href', function(req, res, next) {
+  res.render('index', { title: 'content-href' });
+});
+router.get('/api-href', function(req, res, next) {
+  res.render('index', { title: 'api' });
+});
+router.get('/field/:name', function(req, res, next) {
+  var name=req.params.name;
+  res.render('field', { title: 'field' ,name:name});
 });
 
 

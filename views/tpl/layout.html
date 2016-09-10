@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/public_style/jquery11.min.js' />
+  <link rel='stylesheet' href='/stylesheets/public_style/bootstrap.css' />
+  <link rel="stylesheet" href="/stylesheets/layout.css"/>
+  <%- block('css').toString() %>
+  <style type="text/css">
+
+  </style>
+</head>
+
+<body>
+<div class="cms-head">
+  <div class="container"  style="width: 100%">
+    <div class="navbar-brand">CYC - CMS</div>
+    <div class="navbar">
+      <ul class="nav navbar-nav" style="padding-left: 20px;">
+        <li></li>
+        <li class="home-href"><a href="/">Home</a></li>
+        <li class="model-href"><a href="/model-href">Content Model</a></li>
+        <li class="content-href"><a href="/content-href">Content</a></li>
+        <li class="api-href"><a href="/api-href">API</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+<!--head-->
+
+</div>
+<div class="container body" style="width: 100%; padding-top: 50px; padding-left: 0px; padding-right: 0px;">
+
+  <%-body -%>
+
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!--<script src="javascripts/bootstrap.js"></script>-->
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/vue.js"></script>
+
+<%- block('js').toString() %>
+
+</body>
+
+</html>
