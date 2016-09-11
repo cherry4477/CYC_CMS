@@ -23,7 +23,11 @@ var contentInfoVm=new Vue({
                 cache:false,
                 success:function(json){
                     // console.log(json.data.fields)
-                    contentInfoVm.contentFields=json.data.fields;
+                    if(json.data.fields!=undefined){
+                        contentInfoVm.contentFields=json.data.fields;
+                    }
+
+                    // console.log(json.data.fields)
 
                 },
                 error:function(){
