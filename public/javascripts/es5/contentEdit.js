@@ -42,6 +42,7 @@ var contentInfoVm=new Vue({
                     type:$('#content-fields p').eq(i).attr('id')
                 });
             }
+            console.log('fieldsValue:',fieldsValue)
 
             // console.log(fieldsValue)
             var data= {
@@ -62,11 +63,11 @@ var contentInfoVm=new Vue({
                 success:function(json){
                     if(json.code==0){
                         alert('添加成功！');
-                        contentInfoVm.contentInfo={};
-                        for(var i=0;i<$('#content-fields input').length;i++){
-                            fieldsValue.push({
-                                value:$('#content-fields input').eq(i).val('')
-                            });
+                        // contentInfoVm.contentInfo={};
+                        // for(var i=0;i<$('#content-fields input').length;i++){
+                        //     fieldsValue.push({
+                        //         value:$('#content-fields input').eq(i).val('')
+                        //     });
                         }
 
                     }

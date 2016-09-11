@@ -12,10 +12,18 @@
             <!--<input type="text" class="form-control world-search"  >-->
             <!--<span class="" ></span>-->
             <!--</div>-->
-            <!--<div style="display: inline-block; padding-top: 12px; float: right; padding-left: 300px;">-->
-                <!--<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">Add Entries</button>-->
-                <!--&lt;!&ndash;<button type="button" class="btn btn-success" @click="saveModel">Save content model</button>&ndash;&gt;-->
-            <!--</div>-->
+
+            <div style="display: inline-block; padding-top: 12px; float: right; height: 60px; padding-left: 300px;">
+
+                <select name="" id="" v-model="content_type_id_sel" style="margin-top: 0px; height: 30px;">
+                    <template  v-for=" arr in content_types_Arr">
+                        <option value="{{arr.id}}">{{arr.id}}</option>
+                    </template>
+                </select>
+              <!--<a href="/contentEdit/{{content_type_id_sel}}/{{arr.content_id}}/{{arr.name}}" class="btn btn-primary">添加文档内容</a>-->
+                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#content-creat" @click="creatDocument">添加文档内容</button>
+                    <!--<button type="button" class="btn btn-success" @click="saveModel">Save content model</button>-->
+            </div>
         </div>
 
     </header>
@@ -25,7 +33,7 @@
         <table class="table" style="width: 1367px;">
             <tr>
                 <th>文档 ID</th>
-                <th>文档类型 ID </th>
+                <th>文档模型 ID </th>
                 <th>文档名称</th>
                 <th>文档描述</th>
                 <th>创建者</th>
@@ -41,5 +49,49 @@
             </tr>
         </table>
 
+    </div>
+
+
+    <div class="modal fade" id="content-creat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">添加文档内容</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <label class="input-group-addon">文档模型ID:</label>
+                        <select name="" id="" v-model="content_type_id_sel" style="margin-top: 0px; height: 30px;">
+                            <template  v-for=" arr in content_types_Arr">
+                                <option value="{{arr.id}}" selected="selected">{{arr.id}}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">文档ID:</span>
+                        <input type="text" v-model='creatContent.content_id' class="form-control" placeholder="Field Id">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">文档名称:</span>
+                        <input type="text" v-model='creatContent.name' class="form-control"  placeholder="Field name">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">文档描述:</span>
+                        <input type="text" v-model='creatContent.description' class="form-control"  placeholder="Field name">
+                    </div>
+
+                    <div class="form-group" id="content-fields"  v-for="arr in contentFields">
+                        <p id="{{arr.type}}">{{arr.name}}:</p>
+                        <input name="form-input" class="form-control form-input" id="{{arr.id}}" placeholder="{{arr.name}}'s value" type="text">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" @click="saveContent" >Save</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
