@@ -88,7 +88,7 @@ var contentVM=new Vue({
                 });
             }
             var data= {
-                content_type_id: this.creatContent.content_type_id,
+                content_type_id: this.content_type_id_sel,
                 name: this.creatContent.name,
                 description: this.creatContent.description,
                 fieldsvalue: fieldsValue
@@ -105,12 +105,12 @@ var contentVM=new Vue({
                 success:function(json){
                     if(json.code==0){
                         alert('添加成功！');
-                        // contentInfoVm.contentInfo={};
-                        // for(var i=0;i<$('#content-fields input').length;i++){
-                        //     fieldsValue.push({
-                        //         value:$('#content-fields input').eq(i).val('')
-                        //     });
-                        // }
+                        contentVM.creatContent={};
+                        for(var i=0;i<$('#content-fields input').length;i++){
+                            fieldsValue.push({
+                                value:$('#content-fields input').eq(i).val('')
+                            });
+                        }
 
                     }
                 },
